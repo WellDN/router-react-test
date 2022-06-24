@@ -33,4 +33,10 @@ let invoices = [
   
   export function getInvoices() {
     return invoices;
-  } //this gonna be in Invoices route
+  } //this data gonna be in Invoices route
+
+  export function getInvoice(number) {
+    return invoices.find(
+      (invoice) => invoice.number === number //this is making the due year appears
+    );
+  }

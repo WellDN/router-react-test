@@ -5,3 +5,4 @@ export default function Expenses() {
         </main>
     );
 }
+
