@@ -29,7 +29,15 @@ let invoices = [
       amount: "$4,600",
       due: "01/27/1998",
     },
+    { //Like useSearchParams, useLocation returns a location that tells us information about the URL. A location looks something like this:
+      pathname: "/invoices",
+      search: "?filter=sa",
+      hash: "",
+      state: null,
+      key: "ae4cz2j"
+    }
   ];
+  
   
   export function getInvoices() {
     return invoices;

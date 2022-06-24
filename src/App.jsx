@@ -3,7 +3,11 @@ import { useLocation, NavLink } from 'react-router-dom';
 import { Outlet, Link } from 'react-router-dom';
 //import './App.css'
 
-
+export function deleteInvoice(number) {  //deletes an invoice from fake data store
+  invoices = invoices.filter(
+    (invoice) => invoice.number !== number
+  );
+}
   export default function App() {
     return (
       <div>

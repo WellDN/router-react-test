@@ -1,10 +1,11 @@
 import {
-    QueryNavLink,
+    NavLink,
     Outlet,
     useSearchParams,
   } from "react-router-dom";
   import { getInvoices } from "../data";
   
+
   export default function Invoices() {
     let invoices = getInvoices();
     let [searchParams, setSearchParams] = useSearchParams();
@@ -36,7 +37,7 @@ import {
               return name.startsWith(filter.toLowerCase());
             })
             .map((invoice) => (
-              <QueryNavLink
+              <NavLink
                 style={({ isActive }) => ({
                   display: "block",
                   margin: "1rem 0",
@@ -46,7 +47,7 @@ import {
                 key={invoice.number}
               >
                 {invoice.name}
-              </QueryNavLink>  //the issue is on the QueryNavLink/ to fix just NavLink all of them.
+              </NavLink>  
             ))}
         </nav>
         <Outlet />
@@ -76,4 +77,6 @@ then  its made an Active Links wich means we swapped out Link for NavLink and th
 Search Params: setSearchParams() is putting the ?filter=... search params in the URL and rerendering the router.
 useSearchParams is now returning a URLSearchParams with "filter" as one of its values.
 We set the value of the input to whatever is in the filter search param (it's just like useState but in the URLSearchParams instead!)
-We filter our list of invoices based on the filter search param. */
+We filter our list of invoices based on the filter search param. 
+
+the doc said that to make an custom behavior on this you have to put 'QueryNavLink' but its just doesnt work even if you put value on that maybe the function changed or something...*/
